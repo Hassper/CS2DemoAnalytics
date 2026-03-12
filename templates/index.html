@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CS2 Demo Analytics</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <main class="container">
+    <h1>CS2 Demo Analytics Dashboard</h1>
+
+    <section class="card">
+      <h2>Загрузка демо</h2>
+      <form id="uploadForm">
+        <input id="demoFile" type="file" accept=".dem" required />
+        <button type="submit">Анализировать</button>
+      </form>
+      <p id="status"></p>
+    </section>
+
+    <section class="card">
+      <h2>Информация о матче</h2>
+      <div id="matchInfo" class="match-info"></div>
+      <div class="controls">
+        <label for="playerSelect">Игрок:</label>
+        <select id="playerSelect"></select>
+      </div>
+    </section>
+
+    <section class="grid" id="overviewGrid"></section>
+
+    <section class="card">
+      <h2>Engagement метрики</h2>
+      <table id="engagementTable">
+        <thead><tr><th>Показатель</th><th>Значение</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Кастомные метрики</h2>
+      <table id="customMetricsTable">
+        <thead><tr><th>Показатель</th><th>Значение</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Раунды</h2>
+      <table id="roundStatsTable">
+        <thead><tr><th>Раунд</th><th>Убийства</th><th>Урон</th><th>Выживание (сек)</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section class="charts">
+      <div class="card"><canvas id="killsPerRoundChart"></canvas></div>
+      <div class="card"><canvas id="aimDistributionChart"></canvas></div>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
