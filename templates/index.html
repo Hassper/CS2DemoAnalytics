@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CS2 Demo Analytics</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <main class="container">
+    <h1>CS2 Demo Analytics Dashboard</h1>
+
+    <section class="card">
+      <h2>Upload Demo</h2>
+      <form id="uploadForm">
+        <input id="demoFile" type="file" accept=".dem" required />
+        <button type="submit">Analyze Demo</button>
+      </form>
+      <p id="status"></p>
+    </section>
+
+    <section class="grid" id="overviewGrid"></section>
+
+    <section class="card">
+      <h2>Custom Metrics</h2>
+      <table id="customMetricsTable">
+        <thead><tr><th>Metric</th><th>Value</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Round Statistics</h2>
+      <table id="roundStatsTable">
+        <thead><tr><th>Round</th><th>Kills</th><th>Damage</th><th>Survival Time (s)</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section class="charts">
+      <div class="card"><canvas id="killsPerRoundChart"></canvas></div>
+      <div class="card"><canvas id="aimDistributionChart"></canvas></div>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
